@@ -30,3 +30,19 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+def guiCalender():
+    month = datetime.now().month
+    year = datetime.now().year
+    if len(sys.argv) == 1:
+        print(calendar.month(year, month))
+    elif len(sys.argv) == 2:
+        input_month = sys.argv[1]
+        print(calendar.month(int(year), int(input_month)))
+    else:
+        input_month = sys.argv[1]
+        input_year = sys.argv[2]
+        print(calendar.month(int(input_year), int(input_month)))
+
+
+guiCalender()
